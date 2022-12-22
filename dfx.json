@@ -1,0 +1,28 @@
+{
+  "canisters": {
+    "authclient_backend": {
+      "main": "src/authclient_backend/main.mo",
+      "type": "motoko"
+    },
+    "authclient_frontend": {
+      "dependencies": [
+        "authclient_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/authclient_frontend/src/index.html"
+      },
+      "source": [
+        "src/authclient_frontend/assets",
+        "dist/authclient_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "version": 1
+}
