@@ -5,17 +5,24 @@
       "type": "motoko"
     },
     "authclient_frontend": {
-      "dependencies": [
-        "authclient_backend"
-      ],
+      "dependencies": ["authclient_backend"],
       "frontend": {
         "entrypoint": "src/authclient_frontend/src/index.html"
       },
-      "source": [
-        "src/authclient_frontend/assets",
-        "dist/authclient_frontend/"
-      ],
+      "source": ["src/authclient_frontend/assets", "dist/authclient_frontend/"],
       "type": "assets"
+    },
+    "internet_identity": {
+      "type": "custom",
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm",
+      "shrink": false,
+      "remote": {
+        "candid": "internet_identity.did",
+        "id": {
+          "ic": "r7inp-6aaaa-aaaaa-aaabq-cai"
+        }
+      }
     }
   },
   "defaults": {
