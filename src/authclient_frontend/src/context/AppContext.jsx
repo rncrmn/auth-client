@@ -56,7 +56,10 @@ export const AppProvider = ({ children }) => {
   const login = async () => {
     try {
       await authClient?.login({
-        identityProvider: process.env.II_URL,
+        identityProvider:
+          process.env.NODE_ENV === "development"
+            ? `http://localhost:4943/?canisterId=${process.env.INTERNET_IDENTITY_CANISTER_ID}#authorize`
+            : "https://identity.ic0.app/#authorize",
         onSuccess: async () => {
           initActor(authClient);
           navigate("/");

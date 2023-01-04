@@ -96,9 +96,6 @@ module.exports = {
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: "development",
-      II_URL: isDevelopment
-        ? "http://localhost:4943/?canisterId=r7inp-6aaaa-aaaaa-aaabq-cai#authorize"
-        : "https://identity.ic0.app/#authorize",
       ...canisterEnvVariables,
     }),
     new webpack.ProvidePlugin({
